@@ -4,12 +4,12 @@ import NewsSummaryCard from '../../Shared/NewsSummaryCard/NewsSummaryCard'
 
 
 const Category = () => {
-    const categoryCourses = useLoaderData();
+    const courses = useLoaderData();
     return (
         <div>
-            <h2>this is category:{categoryCourses.length}</h2>
+            <h2>this is category:{courses.length}</h2>
             {
-                categoryCourses.map(course =><NewsSummaryCard
+                courses.map(course =><NewsSummaryCard
                 key={course._id}
                 course={course}
                 ></NewsSummaryCard>)

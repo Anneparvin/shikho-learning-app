@@ -3,12 +3,12 @@ import { useLoaderData } from 'react-router-dom';
 import NewsSummaryCard from '../../Shared/NewsSummaryCard/NewsSummaryCard';
 
 const Home = () => {
-    const allCourses = useLoaderData();
+    const courses = useLoaderData();
     return (
         <div>
-            <h2>Shikho all courses:{allCourses.length}</h2>
+         <h2>Shikho all courses:{courses.length}</h2> 
             {
-                allCourses.map(course =><NewsSummaryCard
+                courses.map(course =><NewsSummaryCard
                 key = {course._id}
                 course={course}
                 ></NewsSummaryCard>)

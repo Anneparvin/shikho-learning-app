@@ -17,15 +17,15 @@ const Header = () => {
               width="50"
               height="50"
               className="d-inline-block align-top"
-              alt=""
+              alt="ShikhoApp"
             />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link><Link to="/">All Courses</Link> </Nav.Link>
+            <Nav.Link><Link to="/">shikhoApp</Link> </Nav.Link>
             <Nav.Link><Link to="/home">Home</Link></Nav.Link>
-            <Nav.Link href="/category">Category</Nav.Link>
+            <Nav.Link><Link to="/Category">Category</Link></Nav.Link>
             <Nav.Link href="/Courses">Courses</Nav.Link>
           
           </Nav>

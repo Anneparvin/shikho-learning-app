@@ -6,7 +6,7 @@ import { SlCompass,SlBubble } from "react-icons/sl";
 
 
 const NewsSummaryCard = ({course}) => {
-    const {_id, title, mentor, details, image_url,rating, total_view} = course;
+    const {_id, title, mentor, details,img, image_url,rating, total_view} = course;
     console.log(course);
     return (
         <div>
@@ -16,7 +16,7 @@ const NewsSummaryCard = ({course}) => {
             <image
                 rounded circle
                 className='me-2'
-                src ={mentor?.img}
+                src ={mentor.img}
                 style ={{height:'60px'}}
             ></image>
             <div>
@@ -37,10 +37,9 @@ const NewsSummaryCard = ({course}) => {
             details.length > 250?
             <p>{details.slice(0,250)+ '...'}<Link to={`/courses/${_id}`}>Read More...</Link></p>:<p>{details}</p>
           }
-        </Card.Text>
-    
+    </Card.Text>
       </Card.Body>
-      <Card.Footer className="d-flex justify-content-center">
+      <Card.Footer className="d-flex justify-content-between">
           <div>
             <FaDisease className='text-warning me-2'></FaDisease>
             <span>{rating?.number}</span>
