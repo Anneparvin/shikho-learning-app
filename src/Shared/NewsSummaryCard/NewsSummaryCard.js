@@ -6,7 +6,7 @@ import { SlCompass,SlBubble } from "react-icons/sl";
 
 
 const NewsSummaryCard = ({course}) => {
-    const {_id, title, mentor, details,img, image_url,rating, total_view} = course;
+    const {_id, title, mentor, details,image_url,rating, total_view} = course;
     console.log(course);
     return (
         <div>
