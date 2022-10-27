@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 const Blog = () => {
     return (
-        <div>
+        <div className='gap-4 p-4 rounded-lg fs-5 mb-4'>
             {/* q-1 */}
             <Card style={{ width: '45rem' }}>
       <Card.Body>

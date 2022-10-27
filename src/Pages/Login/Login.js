@@ -43,6 +43,7 @@ const Login = () => {
     
   return (
         <div>
+          <h1>Please Login</h1>
             <Form onSubmit ={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -61,8 +62,11 @@ const Login = () => {
       <Form.Text className="text-danger">
           We'll never share your email with anyone else.
         </Form.Text>
+      <Button variant="primary" type="submit">
+      Login with email
+      </Button>
       <Button onClick={handleGoogleSignIn} variant="primary" type="submit">
-      login with Google
+      Login with Google
       </Button>
     </Form>
         </div>

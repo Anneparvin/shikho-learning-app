@@ -50,20 +50,18 @@ const Header = () => {
                 </>
               }
               </Nav.Link>
-            <Nav.Link href='#user'>{user.photoUrl?
-            <image 
+            <Nav.Link href='#user'>{user?.photoUrl?
+            <img 
             style={{height:'30px'}} roundedCircle 
-            src={user?.photoURL}></image>
+            src={user?.photoURL} alt=''/>
             :<FaUser></FaUser>
             }</Nav.Link>
           
           </Nav>
           <Nav>
-            <Nav.Link href="login">Login</Nav.Link>
-            <Nav.Link href="blog">Blog</Nav.Link>
-            <Nav.Link eventKey={2} href="register">
-              Register
-            </Nav.Link>
+            <Nav.Link><Link to="/login">Login</Link></Nav.Link>
+            <Nav.Link><Link to="/blog">Blog</Link></Nav.Link>
+            <Nav.Link><Link to="/register">Register</Link></Nav.Link>
           </Nav>
           <div className='d-lg-none'>
             <LeftSideNav></LeftSideNav>

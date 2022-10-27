@@ -1,7 +1,7 @@
-    REACT_APP_apiKey=AIzaSyChxHZPJ7qCKPcfzlq_oh1z_CT6hWXRdVc
-    REACT_APP_authDomain=shikho-learning-app.firebaseapp.com
-    REACT_APP_projectId=shikho-learning-app
-    REACT_APP_storageBucket=shikho-learning-app.appspot.com
-    REACT_APP_messagingSenderId=674261938996
-    REACT_APP_ appId=1:674261938996:web:2f52139ef5e7bc79192b61
-    REACT_APP_measurementId=G-VMWNYGFZ5B
+REACT_APP_apiKey=AIzaSyChxHZPJ7qCKPcfzlq_oh1z_CT6hWXRdVc
+REACT_APP_authDomain=shikho-learning-app.firebaseapp.com
+REACT_APP_projectId=shikho-learning-app
+REACT_APP_storageBucket=shikho-learning-app.appspot.com
+REACT_APP_messagingSenderId=674261938996
+REACT_APP_ appId=1:674261938996:web:2f52139ef5e7bc79192b61
+REACT_APP_measurementId=G-VMWNYGFZ5B
