@@ -35,7 +35,7 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link><Link to="/">shikhoApp</Link> </Nav.Link>
-            <Nav.Link><Link to="/Category">FAQ</Link></Nav.Link>
+            
             <Nav.Link href='#user'>
               {
                 user?.uid?

@@ -1,13 +1,14 @@
 
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
  import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-
+const [passwordError, setPasswordError] = useState('')
   const {signIn} = useContext(AuthContext);
   const navigate = useNavigate()
 
@@ -30,7 +31,15 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
-
+    if(password.length< 6){
+      setPasswordError('please password should be at least 6 characters');
+      return;
+    }
+    if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
+      setPasswordError('please provide at least two upper case letters');
+      return;
+    }
+    setPasswordError('');
     signIn(email, password)
     .then(result=> {
         const user = result.user;
@@ -60,14 +69,17 @@ const Login = () => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
       <Form.Text className="text-danger">
-          We'll never share your email with anyone else.
+          {passwordError}
         </Form.Text>
+        <div className='d-grid gap-2'>
       <Button variant="primary" type="submit">
       Login with email
       </Button>
-      <Button onClick={handleGoogleSignIn} variant="primary" type="submit">
+      <Button onClick={handleGoogleSignIn} variant="primary" type="button">
       Login with Google
       </Button>
+      </div>
+      
     </Form>
         </div>
     );

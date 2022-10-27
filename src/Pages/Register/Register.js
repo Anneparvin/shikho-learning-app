@@ -48,9 +48,11 @@ const Register = () => {
       <Form.Text className="text-danger">
           We'll never share your email with anyone else.
         </Form.Text>
+        <div className='d-grid gap-2'>
       <Button variant="primary" type="submit">
     Register
       </Button>
+      </div>
     </Form>
         </div>
     );

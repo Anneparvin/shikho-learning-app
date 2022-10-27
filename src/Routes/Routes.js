@@ -43,7 +43,7 @@ export const routes = createBrowserRouter([
             {
                 path:'*',
                 element:<div><img src='https://static3.depositphotos.com/1002881/151/i/600/depositphotos_1519030-stock-photo-error-404.jpg' alt='404'/></div>
-            },
+            }
          ]
     }
 ]);
