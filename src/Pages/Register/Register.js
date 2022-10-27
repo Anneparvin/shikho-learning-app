@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-
+  const [passwordError, setPasswordError] = useState('')
     const {createUser} = useContext(AuthContext)
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,6 +14,15 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password);
 
+        if(password.length< 6){
+          setPasswordError('please password should be at least 6 characters');
+          return;
+        }
+        if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
+          setPasswordError('please provide at least two upper case letters');
+          return;
+        }
+        setPasswordError('');
         createUser(email, password)
         .then(result=> {
             const user = result.user;
@@ -46,7 +55,7 @@ const Register = () => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
       <Form.Text className="text-danger">
-          We'll never share your email with anyone else.
+          {passwordError}
         </Form.Text>
         <div className='d-grid gap-2'>
       <Button variant="primary" type="submit">

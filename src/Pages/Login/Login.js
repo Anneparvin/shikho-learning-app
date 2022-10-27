@@ -1,24 +1,41 @@
 
-import { GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
  import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import app from '../../Firebase/Firebase.config';
 
+
+const auth= getAuth(app)
 const Login = () => {
+  const [user,setUser]= useState({})
 const [passwordError, setPasswordError] = useState('')
+
   const {signIn} = useContext(AuthContext);
   const navigate = useNavigate()
 
   const {providerLogin} = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider()
+  const githubProvider = new GithubAuthProvider()
 
   const handleGoogleSignIn =() =>{
-    providerLogin(googleProvider)
+signInWithPopup(auth,googleProvider)
     .then (result =>{
       const user = result.user;
+      setUser(user);
+      console.log(user);
+    })
+    .catch(error => console.error(error))
+  }
+
+  const handleGithubSignIn =() =>{
+    signInWithPopup(auth,githubProvider)
+    .then (result =>{
+      const user = result.user;
+      setUser(user);
       console.log(user);
     })
     .catch(error => console.error(error))
@@ -44,6 +61,7 @@ const [passwordError, setPasswordError] = useState('')
     .then(result=> {
         const user = result.user;
         console.log(user);
+        setUser(user);
         form.reset();
         navigate('/')
     })
@@ -76,7 +94,9 @@ const [passwordError, setPasswordError] = useState('')
       Login with email
       </Button>
       <Button onClick={handleGoogleSignIn} variant="primary" type="button">
-      Login with Google
+      Login with Google</Button>
+      <Button onClick={handleGithubSignIn} variant="primary" type="button">
+      Login with Github
       </Button>
       </div>
       
